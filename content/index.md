@@ -4,11 +4,14 @@ publish: true
 enableToc: false
 ---
 
-# yclian.com
+<div class="home-hero">
+  <h1 class="brand-title">yclian.com</h1>
+  <p class="brand-sub">writing, systems, wine, and other things.</p>
+</div>
 
-writing, systems, wine, and other things.
+<hr class="home-divider" />
 
----
+<div class="home-content">
 
 ### channels
 
@@ -20,6 +23,4 @@ writing, systems, wine, and other things.
 
 - [wine legionnaires](/wine/wine-legionnaires/)
 
----
-
-*a new site is taking shape.*
+</div>

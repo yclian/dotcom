@@ -4,7 +4,6 @@
 .page-title,
 .search-button,
 .search,
-.explorer,
 .breadcrumb,
 .toc,
 .tag-link,
@@ -22,4 +21,108 @@
 article {
   font-family: var(--bodyFont);
   line-height: 1.65;
+}
+
+// -----------------------------------------------------------------------------
+// Minimalist Centerpiece Homepage Styling
+// -----------------------------------------------------------------------------
+body[data-slug="index"] {
+  // Hide left sidebar page title duplicate on home
+  .left.sidebar .page-title {
+    display: none;
+  }
+
+  // Hide default Quartz article title & date header on home
+  .page-header {
+    display: none;
+  }
+
+  // Center column layout
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-hero {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+
+    .brand-title {
+      font-family: var(--headerFont);
+      font-size: clamp(3.8rem, 9vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 1rem 0;
+      text-transform: lowercase;
+    }
+
+    .brand-sub {
+      font-family: var(--bodyFont);
+      font-size: 1.3rem;
+      color: var(--gray);
+      margin: 0;
+      text-transform: lowercase;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  .home-divider {
+    width: 60%;
+    max-width: 720px;
+    border: none;
+    border-top: 1px solid var(--lightgray);
+    margin: 2rem auto 2.5rem auto;
+  }
+
+  .home-content {
+    width: 60%;
+    max-width: 720px;
+    margin: 0 auto 5rem auto;
+    text-align: left;
+
+    h3 {
+      font-family: var(--headerFont);
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      text-transform: lowercase;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
+
+      li {
+        padding: 0.4rem 0;
+
+        a {
+          font-family: var(--bodyFont);
+          font-size: 1.25rem;
+          color: var(--darkgray);
+          text-decoration: none;
+          transition: color 0.15s ease;
+
+          &:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }

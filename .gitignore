@@ -29,3 +29,8 @@ yarn-error.log*
 # OS artifacts
 .DS_Store
 Thumbs.db
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
