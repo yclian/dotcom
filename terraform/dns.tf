@@ -12,8 +12,10 @@ locals {
     { priority = 1, value = "aspmx.l.google.com" },
     { priority = 5, value = "alt1.aspmx.l.google.com" },
     { priority = 5, value = "alt2.aspmx.l.google.com" },
-    { priority = 10, value = "alt3.aspmx.l.google.com" },
-    { priority = 10, value = "alt4.aspmx.l.google.com" }
+    { priority = 10, value = "aspmx2.googlemail.com" },
+    { priority = 10, value = "aspmx3.googlemail.com" },
+    { priority = 30, value = "aspmx4.googlemail.com" },
+    { priority = 30, value = "aspmx5.googlemail.com" }
   ]
 }
 
@@ -29,7 +31,7 @@ resource "cloudflare_record" "google_mx" {
 }
 
 # ------------------------------------------------------------------------------
-# 2. SPF & Verification Records (TXT)
+# 2. Email Security & Verification Records (TXT)
 # ------------------------------------------------------------------------------
 resource "cloudflare_record" "google_spf" {
   zone_id = var.zone_id
@@ -38,6 +40,31 @@ resource "cloudflare_record" "google_spf" {
   content = "v=spf1 include:_spf.google.com ~all"
   ttl     = 3600
   comment = "Google Workspace SPF authorization"
+}
+
+resource "cloudflare_record" "dmarc" {
+  zone_id = var.zone_id
+  name    = "_dmarc"
+  type    = "TXT"
+  content = "v=DMARC1; p=none; rua=mailto:dmarc@yclian.com"
+  ttl     = 3600
+  comment = "DMARC policy"
+}
+
+variable "google_dkim_record" {
+  description = "Google domainkey DKIM TXT record content"
+  type        = string
+  default     = ""
+}
+
+resource "cloudflare_record" "google_dkim" {
+  count   = var.google_dkim_record != "" ? 1 : 0
+  zone_id = var.zone_id
+  name    = "google._domainkey"
+  type    = "TXT"
+  content = var.google_dkim_record
+  ttl     = 3600
+  comment = "Google Workspace DKIM record"
 }
 
 # Variable placeholders for existing verification TXT values to import cleanly
@@ -71,6 +98,22 @@ resource "cloudflare_record" "atlassian_verification" {
   content = "atlassian-domain-verification=${var.atlassian_verification_tokens[count.index]}"
   ttl     = 3600
   comment = "Atlassian organization domain verification"
+}
+
+variable "atlassian_sending_domain_verification" {
+  description = "Atlassian sending domain verification token"
+  type        = string
+  default     = ""
+}
+
+resource "cloudflare_record" "atlassian_sending_verification" {
+  count   = var.atlassian_sending_domain_verification != "" ? 1 : 0
+  zone_id = var.zone_id
+  name    = "@"
+  type    = "TXT"
+  content = "atlassian-sending-domain-verification=${var.atlassian_sending_domain_verification}"
+  ttl     = 3600
+  comment = "Atlassian sending domain verification"
 }
 
 # ------------------------------------------------------------------------------
