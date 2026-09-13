@@ -262,6 +262,7 @@ body[data-slug="index"] {
   }
 
   .home-divider {
+    display: block;
     width: 100%;
     border: none;
     border-top: 1px solid var(--lightgray) !important;
