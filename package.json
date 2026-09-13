@@ -15,7 +15,7 @@
     "quartz": "./quartz/bootstrap-cli.mjs",
     "build": "npx quartz build",
     "serve": "npx quartz build --serve",
-    "deploy": "wrangler deploy",
+    "deploy": "npx quartz build && wrangler pages deploy public --project-name yclian-com --branch master",
     "sync": "npx quartz sync",
     "docs": "npx quartz build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
