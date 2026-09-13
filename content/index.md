@@ -4,28 +4,29 @@ publish: true
 enableToc: false
 ---
 
+<nav class="home-top-nav">
+  <div class="nav-group">
+    <div class="nav-dropdown">
+      <button class="nav-trigger" type="button" aria-haspopup="true">channels <span class="nav-caret">▾</span></button>
+      <div class="nav-menu">
+        <a href="https://x.com/yclian" target="_blank" rel="noopener">x</a>
+        <a href="https://yclian.substack.com/" target="_blank" rel="noopener">substack</a>
+        <a href="https://linktr.ee/yclian" target="_blank" rel="noopener">linktree</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-trigger" type="button" aria-haspopup="true">archives <span class="nav-caret">▾</span></button>
+      <div class="nav-menu">
+        <a href="/wine/wine-legionnaires/">wine legionnaires</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <div class="home-hero">
   <h1 class="brand-title">yclian.com</h1>
-  <p class="brand-sub">writing, systems, wine, and other things.</p>
+  <p class="brand-sub">between systems and cellars.</p>
 </div>
 
 <hr class="home-divider" />
 
-<div class="home-content">
-  <div class="home-columns">
-    <div class="home-col">
-      <h3>channels</h3>
-      <ul>
-        <li><a href="https://yclian.substack.com/">substack</a></li>
-        <li><a href="https://linktr.ee/yclian">linktree</a></li>
-        <li><a href="https://x.com/yclian">x / @yclian</a></li>
-      </ul>
-    </div>
-    <div class="home-col">
-      <h3>archives</h3>
-      <ul>
-        <li><a href="/wine/wine-legionnaires/">wine legionnaires</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
