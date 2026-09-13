@@ -29,12 +29,12 @@ tags:
 
 ## Lineup & Sign-up Roster
 
-**Format:** Open theme, 100% Burgundy. When signing up, put down your **Name** and the **Producer / Cuvée** you intend to bring to avoid duplicates and ensure a diverse spread across Bouzeron, the Côte d'Or, and beyond.
+**Format:** Open theme, 100% Burgundy. When signing up, put down your **Initials** and the **Producer / Cuvée** you intend to bring to avoid duplicates and ensure a diverse spread across Bouzeron, the Côte d'Or, and beyond.
 
 | # | Attendee | Producer | Wine & Cuvée | Sub-Region / Village | Notes |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1 | **YC (Me)** | *TBC (e.g., Sylvain Pataille / Domaine de Villaine)* | *TBC* | Marsannay / Bouzeron | Confirmed date: 9 Jan 2027 |
-| 2 | Aleksandar Draganic | *TBC* | *TBC* | *TBC* | Co-host |
+| 1 | **YC** | *TBC (e.g., Sylvain Pataille / Domaine de Villaine)* | *TBC* | Marsannay / Bouzeron | Confirmed date: 9 Jan 2027 |
+| 2 | **AD** | *TBC* | *TBC* | *TBC* | Co-host |
 | 3 |  |  |  |  |  |
 | 4 |  |  |  |  |  |
 | 5 |  |  |  |  |  |
@@ -129,20 +129,20 @@ Aligoté has shed its old reputation as acidic Kir filler. With warmer vintages 
 
 FORMAT:
 • Open Theme (100% Burgundy only).
-• When you put your name down, please include the PRODUCER (and cuvée if known) to prevent duplicates and ensure a good spread across Bouzeron, Côte de Nuits, Côte de Beaune, and old-vine lieux-dits.
+• When you put your initials down, please include the PRODUCER (and cuvée if known) to prevent duplicates and ensure a good spread across Bouzeron, Côte de Nuits, Côte de Beaune, and old-vine lieux-dits.
 • Once the lineup is locked in, YC will prep a comprehensive info sheet covering all the wines, terroirs, and producer backgrounds for the session.
 
 SIGN-UP ROSTER:
 1. YC - Sylvain Pataille / Domaine de Villaine (TBC)
-2. Aleks - Producer TBC
-3. [Name] - [Producer]
-4. [Name] - [Producer]
-5. [Name] - [Producer]
-6. [Name] - [Producer]
-7. [Name] - [Producer]
-8. [Name] - [Producer]
-9. [Name] - [Producer]
-10. [Name] - [Producer]
+2. AD - Producer TBC
+3. [Initials] - [Producer]
+4. [Initials] - [Producer]
+5. [Initials] - [Producer]
+6. [Initials] - [Producer]
+7. [Initials] - [Producer]
+8. [Initials] - [Producer]
+9. [Initials] - [Producer]
+10. [Initials] - [Producer]
 (Backups: 11, 12)
 
 Dossier: https://yclian.com/wine-legionnaires/2027/the-other-burgundy-aligote/
