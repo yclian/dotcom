@@ -1,0 +1,25 @@
+@use "./variables.scss" as *;
+
+// Lowercase enforcement for structural components & navigation
+.page-title,
+.search-button,
+.search,
+.explorer,
+.breadcrumb,
+.toc,
+.tag-link,
+.footer,
+.content-meta,
+.table-of-contents {
+  text-transform: lowercase;
+}
+
+.page-title a {
+  font-family: var(--headerFont);
+  letter-spacing: -0.02em;
+}
+
+article {
+  font-family: var(--bodyFont);
+  line-height: 1.65;
+}

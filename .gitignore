@@ -16,6 +16,7 @@ backstage/
 
 # Node & Quartz Artifacts
 node_modules/
+.quartz/
 .quartz-cache/
 public/
 npm-debug.log*
