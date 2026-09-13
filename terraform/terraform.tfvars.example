@@ -1,0 +1,18 @@
+# ==============================================================================
+# Terraform Variables Example
+# ==============================================================================
+# Copy this file to terraform.tfvars (git-ignored) to supply credentials:
+# cp terraform.tfvars.example terraform.tfvars
+
+cloudflare_api_token = "cfut_..."
+account_id           = "your_cloudflare_account_id"
+zone_id              = "your_cloudflare_zone_id"
+domain_name          = "yclian.com"
+
+# Optional: populate existing TXT verification values to import into Terraform
+google_site_verification       = ""
+atlassian_verification_tokens = [
+  # "token1",
+  # "token2",
+  # "token3"
+]
