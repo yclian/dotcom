@@ -12,15 +12,20 @@ enableToc: false
 <hr class="home-divider" />
 
 <div class="home-content">
-
-### channels
-
-- [substack](https://yclian.substack.com/)
-- [linktree](https://linktr.ee/yclian)
-- [x / @yclian](https://x.com/yclian)
-
-### archives
-
-- [wine legionnaires](/wine/wine-legionnaires/)
-
+  <div class="home-columns">
+    <div class="home-col">
+      <h3>channels</h3>
+      <ul>
+        <li><a href="https://yclian.substack.com/">substack</a></li>
+        <li><a href="https://linktr.ee/yclian">linktree</a></li>
+        <li><a href="https://x.com/yclian">x / @yclian</a></li>
+      </ul>
+    </div>
+    <div class="home-col">
+      <h3>archives</h3>
+      <ul>
+        <li><a href="/wine/wine-legionnaires/">wine legionnaires</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
