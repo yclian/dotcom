@@ -8,6 +8,9 @@ cf.secret.txt
 # Terraform state & cache
 *.tfstate
 *.tfstate.*
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
 .terraform/
 .terraform.lock.hcl
 
