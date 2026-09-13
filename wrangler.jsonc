@@ -2,5 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "yclian-com",
   "compatibility_date": "2026-09-11",
-  "pages_build_output_dir": "public"
+  "pages_build_output_dir": "public",
+  "assets": {
+    "directory": "public"
+  }
 }
