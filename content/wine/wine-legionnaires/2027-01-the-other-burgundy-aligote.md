@@ -1,6 +1,6 @@
 ---
 title: "the other burgundy: aligoté"
-description: "Wine Legionnaires session dossier: The Other Burgundy: Aligoté (January 2027)."
+description: "Wine Legionnaires session dossier: The Other Burgundy: Aligoté (Saturday, 9th January 2027)."
 date: 2026-09-13
 published: 2026-09-13
 publish: true
@@ -15,99 +15,137 @@ tags:
 
 # The Other Burgundy: Aligoté
 
-```table-of-contents
-```
+**Theme:** The Other Burgundy: Aligoté (100% Burgundy)  
+**Event:** Wine Legionnaires (January 2027 Session)  
+**Type:** Open Lineup / Blind Tasting  
+**Date:** Saturday, 9th January 2027  
+**Time:** 7:00 PM (TBC)  
+**Location:** Singapore (TBC)  
+**Public Dossier:** [https://yclian.com/wine-legionnaires/2027/the-other-burgundy-aligote/](https://yclian.com/wine-legionnaires/2027/the-other-burgundy-aligote/)
+
+> For decades dismissed as high-acid bistro carafe wine or Kir fodder, Aligoté is undergoing a major renaissance. Driven by warmer vintages and top-tier vignerons applying low-yield, barrel-aged rigor, Burgundy's "other" white grape has become one of the region's most vibrant, terroir-transparent expressions.
 
 ---
 
-## 1. The Thematic Core
+## Lineup & Sign-up Roster
 
-For decades, Aligoté served as Burgundy's utilitarian afterthought: a high-acid workhorse planted in frost pockets and flat valley bottoms, harvested for volume, and relegated to the Kir cocktail. That paradigm is now obsolete. Driven by rising global temperatures that ripen the variety's fierce malic acid, alongside a dedicated vanguard of producers who treat the grape with the same low-yield, barrel-aged rigor as Chardonnay, Aligoté has emerged as one of the most dynamic expressions of Burgundian terroir.
+**Format:** Open theme, 100% Burgundy. When signing up, put down your **Name** and the **Producer / Cuvée** you intend to bring to avoid duplicates and ensure a diverse spread across Bouzeron, the Côte d'Or, and beyond.
 
-This session investigates the full spectrum of the grape. We calibrate the baseline against the historic limestone benchmark of Bouzeron, test the rising tier of site-specific lieux-dits and centenarian heritage parcels, and contrast both against the broader international diaspora.
-
----
-
-## 2. The Flight Sequence: 3 + 3 + 4 Roster
-
-The tasting follows a deliberate ten-bottle progression partitioned into three distinct movements:
-
-### Flight 1: The Establishment (Three Bouzerons)
-Three reference bottles from the Bouzeron AOC, the sole appellation in Burgundy exclusively dedicated to Aligoté.
-- Bottle 01: Bouzeron Benchmark A (Classic limestone focus)
-- Bottle 02: Bouzeron Benchmark B (Extended lees contact or neutral wood)
-- Bottle 03: Bouzeron Benchmark C (Top-tier benchmark parcel)
-
-*Objective:* Calibrate the palate against Aligoté Doré grown on classic white limestone soils, establishing the benchmark for varietal balance and tension.
-
-### Flight 2: The Uprising (Three Named Lieux-Dits & Heritage Parcels)
-Three single-vineyard or named heritage sites from the Côte de Nuits and Côte de Beaune:
-- Bottle 04: Marsannay Lieu-Dit (Northern Côte de Nuits limestone and marl)
-- Bottle 05: Centenarian Heritage Parcel (~100-year-old ungrafted or massale vines)
-- Bottle 06: Named Burgundian Site (e.g. Meursault, Puligny, or Hautes-Côtes lieu-dit)
-
-*Objective:* Evaluate whether low-yield, old-vine Aligoté from elite sites can compile with the complexity, texture, and mineral resonance normally associated with premier cru Chardonnay.
-
-### Flight 3: The Other World (Two Diaspora + Two Global Wildcards)
-Four bottles exploring the grape outside its home appellation:
-- Bottle 07: Continental Diaspora 1 (Eastern or Central Europe: Romania, Moldova, or Bulgaria)
-- Bottle 08: Continental Diaspora 2 (Switzerland or proximate alpine terroir)
-- Bottle 09: Global Wildcard 1 (New World expression: United States, Canada, or Australia)
-- Bottle 10: Global Wildcard 2 (Experimental cuvée, skin contact, or amphora fermentation)
-
-*Objective:* Test how the grape's genetic acidity adapts across different soil chemistries and climates outside the Kimmeridgian and Oxfordian limestone belt.
+| # | Attendee | Producer | Wine & Cuvée | Sub-Region / Village | Notes |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| 1 | **YC (Me)** | *TBC (e.g., Sylvain Pataille / Domaine de Villaine)* | *TBC* | Marsannay / Bouzeron | Confirmed date: 9 Jan 2027 |
+| 2 | Aleksandar Draganic | *TBC* | *TBC* | *TBC* | Co-host |
+| 3 |  |  |  |  |  |
+| 4 |  |  |  |  |  |
+| 5 |  |  |  |  |  |
+| 6 |  |  |  |  |  |
+| 7 |  |  |  |  |  |
+| 8 |  |  |  |  |  |
+| 9 |  |  |  |  |  |
+| 10 |  |  |  |  |  |
+| 11 | *(Backup / Extra)* |  |  |  |  |
+| 12 | *(Backup / Extra)* |  |  |  |  |
 
 ---
 
-## 3. Essential Specifications and Clarifications
+## 1. Thematic Primer: Why Aligoté Matters Now
 
-### The Collective: Les Aligoteurs
-Les Aligoteurs is an association founded in Burgundy combining the grape's name with *auteurs* (authors or creators). The collective unites vignerons, researchers, and sommeliers committed to preserving Aligoté Doré selections, studying massale biodiversity, and outlawing the over-cropping that historically damaged the grape's reputation. When reviewing producers, affiliation with this collective signals serious, low-yield intent.
+### The Historical Misconception
+- Historically, Aligoté was planted in frost-prone valley floors and cold, flat plots while Chardonnay took the mid-slope premiers crus.
+- High yields (often 70+ hL/ha) and cold vintages produced tart, fiercely acidic wines that were famously masked by crème de cassis to invent the *Kir* cocktail (named after Félix Kir, Mayor of Dijon).
 
-### Parcel Definition: Centenarian
-In the context of this flight, "centenarian" refers to vines approximately 100 years of age. It is a precise viticultural description of vine longevity and root depth, not a formal bureaucratic category. These ancient parcels deliver naturally regulated yields, small berries, and concentrated dry extract that offset the grape's high natural acidity.
-
-### Varietal Thresholds: The 85% Rule
-- **Burgundy AOCs (Bourgogne Aligoté and Bouzeron):** French appellation law mandates strictly 100% Aligoté.
-- **International Diaspora and Wildcards:** Eligible bottles must contain at least 85% Aligoté under standard single-varietal labeling regulations. This accommodates international regions where minor blending is customary.
+### The Modern Revolution
+1. **Climate Ripeness:** Warmer growing seasons now ensure full phenolic ripeness and softened malic acid while preserving Aligoté's electric, saline tension.
+2. **Aligoté Doré vs. Aligoté Vert:** Elite producers work strictly with low-yielding **Aligoté Doré** (golden-hued berries with higher aromatics and dry extract) rather than high-yielding Aligoté Vert.
+3. **Les Aligoteurs:** A vanguard association founded by vignerons like Sylvain Pataille, Laurent Ponsot, and Aubert de Villaine celebrating massale selection, old vines, low yields, and serious wood/lees aging.
+4. **Site-Specific Lieux-Dits:** Instead of generic regional bottlings, leading domaines now bottle single-vineyard parcels from Marsannay, Meursault, Puligny, and the Hautes-Côtes, rivaling Premier Cru Chardonnays in complexity.
 
 ---
 
-## 4. Singapore Sourcing Strategy and Fallback Ladder
+## 2. Appellations & Terroir Spectrum
 
-Local physical stock for Eastern European Aligoté is limited in Singapore retail channels. Presenters assigned to the Continental Diaspora should execute the following fallback ladder:
+All bottles for this session must come from **Burgundy (100%)**, falling into two main appellation brackets:
 
-1. **Tier 1 (Primary Target):** Swiss Valais/Geneva Aligoté, or estate-bottled Romanian (Dealu Mare) or Moldovan (Cricova/Purcari) Aligoté via local European specialty importers.
-2. **Tier 2 (First Fallback):** Alternate Continental European plantings outside France (e.g. German Pfalz Aligoté or Austrian experimentation).
-3. **Tier 3 (Second Fallback):** A secondary elite Burgundian lieu-dit from an unrepresented commune, or an established New World Aligoté (Oregon, Washington State, or Niagara Peninsula).
+### A. Bouzeron AOC (Côte Chalonnaise)
+- The only communal appellation in France reserved exclusively for Aligoté (established in 1997 thanks to Aubert de Villaine).
+- Soils: White Oxfordian limestone hillsides rather than valley clay.
+- Profile: Floral, white peach, lemon blossom, and distinctive crushed chalk minerality. Richer mid-palate with sustained acid backbone.
+
+### B. Bourgogne Aligoté AOC & Single Lieux-Dits
+- **Côte de Nuits (Marsannay, Vosne, Morey):** Notable for high-density old vines, limestone-clay marls, and structured, savory profiles (e.g., Sylvain Pataille's single-parcel cuvées like Clos du Roy, Charme aux Prêtres, and Champ Forey).
+- **Côte de Beaune (Meursault, Puligny, Auxey-Duresses):** Often vinified in neutral oak barrels by benchmark white Burgundy masters (e.g., Coche-Dury, Roulot, Fichet, Pierre-Yves Colin-Morey, Arnaud Ente). Exhibits hazelnut, smoky reduction, and creamy texture balanced by crisp acidity.
+- **Hautes-Côtes & Maconnais / Chablisien:** Cooler elevations and high-calcareous soils yielding crystalline, razor-sharp, saline expressions (e.g., Claire Naudin, Domaine Dureuil-Janthial, Nicolas Faure).
+
+---
+
+## 3. Benchmark Producers Guide
+
+A quick reference of standout producers to spark ideas for the lineup:
+
+| Producer | Focus / Style | Notable Cuvée | Profile & Heritage |
+| :--- | :--- | :--- | :--- |
+| **Domaine de Villaine** | Bouzeron benchmark | Bouzeron / Les Saint-Jacques | Certified organic; historical champion of Bouzeron Aligoté Doré. |
+| **Domaine Sylvain Pataille** | Marsannay lieu-dit pioneer | Clos du Roy / Charme aux Prêtres | Biodynamic icon; single-vineyard vinification, long élevage in old oak. |
+| **Domaine Jean-Philippe Fichet** | Meursault precision | Bourgogne Aligoté | Sourced from 50+ year-old vines; aged in neutral oak; remarkable tension and hazelnut flint. |
+| **Pierre-Yves Colin-Morey (PYCM)** | Côte de Beaune tension | Bourgogne Aligoté | Chassagne master; signature mineral reduction, electric energy, and precision. |
+| **Domaine Roulot** | Meursault benchmark | Bourgogne Aligoté | Crystalline, chiseled, linear purity from one of Burgundy's greatest estates. |
+| **Domaine Claire Naudin** | Hautes-Côtes artisan | Le Clou 34 | Minimal sulfur, old vines, expressive, floral, and deeply textural natural profile. |
+| **Domaine Dureuil-Janthial** | Rully / Côte Chalonnaise | Bourgogne Aligoté | Exceptional fruit density and Burgundian cellar discipline. |
+| **Nicolas Faure** | Cult micro-cuvée | La Corvée de Bully | Rare, low-yield old-vine cuvée from the Hautes-Côtes with massive cult following. |
+| **Domaine Ponsot** | Morey-Saint-Denis | Clos des Monts Luisants 1er Cru | The only Premier Cru vineyard in Burgundy planted to old-vine Aligoté (1911 massale). |
+| **Alice et Olivier de Moor** | Chablis / Chitry border | 1er Bruit / D'Autres Vallées | Natural pioneer; mineral, saline, unfiltered clarity on Kimmeridgian limestone. |
+
+---
+
+## 4. Sourcing & Local Singapore Availability
+
+Top vetted merchants in Singapore stocking authentic Burgundian Aligoté:
+
+1. **Wine Culture Singapore** ([wineculture.com.sg](https://wineculture.com.sg))
+   - Usually stocks Sylvain Pataille, Pierre-Yves Colin-Morey, and Jean-Philippe Fichet.
+2. **The Vintage Wine Club** ([thevintageclub.sg](https://thevintageclub.sg))
+   - Strong grower Burgundy selection; occasional Bouzeron allocations.
+3. **Analogue Wine Merchant (AWM)** ([awm.sg](https://awm.sg))
+   - Exceptional portfolio of artisanal and natural Burgundians (e.g., Alice & Olivier de Moor, Claire Naudin).
+4. **Artisan Cellars** ([artisan-cellars.com](https://artisan-cellars.com))
+   - Deep lineup of classical and biodynamic Côte d'Or and Côte Chalonnaise vignerons.
+5. **Grand Cru Wine Concierge / Vinum**
+   - Allocations of established names and Bouzeron benchmarks.
 
 ---
 
 ## 5. WhatsApp Broadcast Copy
 
-For instant distribution to attendees and presenters, use this compressed briefing:
+Copy and paste directly into the Wine Legionnaires WhatsApp group:
 
 ```text
-WINE LEGIONNAIRES // JANUARY 2027
-Session: "The Other Burgundy: Aligoté"
-Format: 10 Bottles // 3 + 3 + 4 Roster
+🍷 WINE LEGIONNAIRES // JANUARY 2027
+Theme: "The Other Burgundy - Aligoté"
+Date: Saturday, 9th January 2027
+Time: 7:00 PM (Location TBC)
+Lineup: 100% Burgundy (AOC Bouzeron & Bourgogne Aligoté)
 
-1. THE ESTABLISHMENT (3 Bouzerons)
-- 3 reference bottles showing Bouzeron limestone terroir and lees/wood calibration.
+Aligoté has shed its old reputation as acidic Kir filler. With warmer vintages and top Côte d'Or & Chalonnaise vignerons giving it low-yield, barrel-aged treatment, it has become one of Burgundy's most thrilling and transparent whites.
 
-2. THE UPRISING (3 Named Lieux-Dits)
-- Marsannay lieu-dit
-- Centenarian / heritage parcel (~100-year-old vines)
-- Additional named Côte site (e.g. Meursault or Hautes-Côtes)
+FORMAT:
+• Open Theme (100% Burgundy only).
+• When you put your name down, please include the PRODUCER (and cuvée if known) to prevent duplicates and ensure a good spread across Bouzeron, Côte de Nuits, Côte de Beaune, and old-vine lieux-dits.
+• Once the lineup is locked in, YC will prep a comprehensive info sheet covering all the wines, terroirs, and producer backgrounds for the session.
 
-3. THE OTHER WORLD (4 Bottles)
-- 2 Continental Diaspora (Switzerland, Romania, Moldova, or Bulgaria; fallback to New World if unavailable)
-- 2 Global Wildcards (New World sites, skin contact, or amphora)
+SIGN-UP ROSTER:
+1. YC - Sylvain Pataille / Domaine de Villaine (TBC)
+2. Aleks - Producer TBC
+3. [Name] - [Producer]
+4. [Name] - [Producer]
+5. [Name] - [Producer]
+6. [Name] - [Producer]
+7. [Name] - [Producer]
+8. [Name] - [Producer]
+9. [Name] - [Producer]
+10. [Name] - [Producer]
+(Backups: 11, 12)
 
-RULES:
-- Minimum 85% Aligoté for international entries, 100% for Burgundy AOCs.
-- Blind flight sequencing.
-- Full session dossier: https://yclian.com/wine-legionnaires/2027/the-other-burgundy-aligote/
+Dossier: https://yclian.com/wine-legionnaires/2027/the-other-burgundy-aligote/
 ```
 
 ---

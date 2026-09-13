@@ -17,4 +17,4 @@ Flights are constructed around rigorous parameters: balanced flights, strict fli
 
 | date | theme | roster format | dossier |
 | :--- | :--- | :--- | :--- |
-| 2027-01 | the other burgundy: aligoté | 3 + 3 + 4 (establishment, uprising, diaspora) | [read dossier](/wine-legionnaires/2027/the-other-burgundy-aligote/) |
+| 2027-01 | the other burgundy: aligoté | 100% burgundy (open producer lineup) | [read dossier](/wine-legionnaires/2027/the-other-burgundy-aligote/) |
