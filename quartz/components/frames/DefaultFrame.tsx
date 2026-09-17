@@ -21,6 +21,8 @@ export const DefaultFrame: PageFrame = {
     right,
     footer,
   }: PageFrameProps) {
+    const isIndex = componentData.fileData.slug === "index"
+
     return (
       <>
         <div class="left sidebar">
@@ -42,17 +44,27 @@ export const DefaultFrame: PageFrame = {
             </div>
           </div>
           <Content {...componentData} />
-          <div class="page-footer">
-            {afterBody.map((BodyComponent) => (
+          {isIndex ? (
+            <div class="home-graph-section">
+              {right.map((BodyComponent) => (
+                <BodyComponent {...componentData} />
+              ))}
+            </div>
+          ) : (
+            <div class="page-footer">
+              {afterBody.map((BodyComponent) => (
+                <BodyComponent {...componentData} />
+              ))}
+            </div>
+          )}
+        </div>
+        {!isIndex && (
+          <div class="right sidebar">
+            {right.map((BodyComponent) => (
               <BodyComponent {...componentData} />
             ))}
           </div>
-        </div>
-        <div class="right sidebar">
-          {right.map((BodyComponent) => (
-            <BodyComponent {...componentData} />
-          ))}
-        </div>
+        )}
         {footer.map((FooterComponent) => (
           <FooterComponent {...componentData} />
         ))}
