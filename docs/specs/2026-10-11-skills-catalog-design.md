@@ -52,11 +52,11 @@ references:
 ## 3. Ingestion & Sync Pipeline (`dotcom`)
 
 ### 3.1. Script Location & Dependencies
-- **Script**: `scripts/sync-skills.ts`
-- **Runtime**: Executed via `tsx` using packages already present in `dotcom/package.json` (`yaml`, `globby`, Node `fs/promises`, `child_process`). No new npm dependencies required.
+- **Script**: `scripts/sync-skills.mjs`
+- **Runtime**: Pure JavaScript ES Module executed directly via `node ./scripts/sync-skills.mjs` (Node >= 22) using `yaml`, `fs/promises`, and `child_process`. Zero TypeScript compilation or extra dependencies required.
 
 ### 3.2. Source Resolution Strategy
-When `scripts/sync-skills.ts` runs:
+When `scripts/sync-skills.mjs` runs:
 1. **Local Sibling Discovery (Primary)**: Checks `process.env.SKILLS_DIR` or defaults to `../skills` (`c:\Users\yclian\Development\github.com\yclian\skills`).
 2. **Remote Clone Fallback (CI / Standalone)**: If the local directory is absent, shallow-clones `https://github.com/yclian/skills.git` into `.quartz-cache/skills-source`.
 
@@ -85,7 +85,7 @@ When `scripts/sync-skills.ts` runs:
 ### 3.4. Build Integration
 - **`package.json` scripts**:
   ```json
-  "sync-skills": "npx tsx ./scripts/sync-skills.ts",
+  "sync-skills": "node ./scripts/sync-skills.mjs",
   "prebuild": "npm run install-plugins && npm run sync-skills"
   ```
 - **Git Tracked Content**: The generated `content/skills/*.md` files are committed to the `dotcom` repository. Because Cloudflare Pages runs `npx quartz build` directly, committing the synced markdown guarantees deterministic edge builds while `npm run sync-skills` (and `npm run build`) keeps them synchronized locally.
@@ -200,11 +200,11 @@ The 7 existing skills in `yclian/skills` will be enriched as follows:
 ## 6. Error Handling & Testing
 
 1. **Missing Frontmatter Fields**:
-   - If `name` or `description` is missing in any `SKILL.md`, `sync-skills.ts` throws a descriptive build error naming the offending file.
+   - If `name` or `description` is missing in any `SKILL.md`, `sync-skills.mjs` throws a descriptive build error naming the offending file.
    - If `example-prompts`, `related`, or `references` are omitted, the corresponding section is gracefully skipped or falls back to default catalog links.
 2. **Broken Internal `related` Slugs**:
-   - If a skill lists a `related` slug that does not exist in `yclian/skills`, `sync-skills.ts` logs a warning and omits the broken link (or fails in `--strict` mode).
+   - If a skill lists a `related` slug that does not exist in `yclian/skills`, `sync-skills.mjs` logs a warning and omits the broken link (or fails in `--strict` mode).
 3. **Automated Tests**:
-   - `scripts/sync-skills.test.ts` (runnable via `npm test` / `tsx --test`) verifying frontmatter extraction, H1 deduplication, install snippet rendering, and related-link resolution.
+   - `scripts/sync-skills.test.mjs` (runnable via native `node --test ./scripts/sync-skills.test.mjs`) verifying frontmatter extraction, H1 deduplication, install snippet rendering, and related-link resolution.
 4. **Build Verification**:
-   - Running `npm run build` in `dotcom` must succeed with zero TypeScript/Quartz errors and produce `public/skills/index.html` plus `public/skills/<slug>/index.html` for all 7 skills.
+   - Running `npm run build` in `dotcom` must succeed with zero errors and produce `public/skills/index.html` plus `public/skills/<slug>/index.html` for all 7 skills.
