@@ -17,6 +17,7 @@ enableToc: false
     <div class="nav-dropdown">
       <button class="nav-trigger" type="button" aria-haspopup="true">archives <span class="nav-caret">▾</span></button>
       <div class="nav-menu">
+        <a href="/skills/">skills</a>
         <a href="/wine/wine-legionnaires/">wine legionnaires</a>
       </div>
     </div>

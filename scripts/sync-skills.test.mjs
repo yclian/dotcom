@@ -3,6 +3,7 @@ import assert from "node:assert/strict"
 import {
   parseSkillFile,
   stripLeadingH1,
+  normalizeRelativeSkillLinks,
   renderSkillPage,
   renderCatalogIndex,
 } from "./sync-skills.mjs"
@@ -40,6 +41,14 @@ Body paragraph here.
   it("strips leading H1 from markdown body without removing H2 headings", () => {
     const input = `\n# Main Title\n\nIntro text.\n\n## Section 1\nDetails.`
     assert.equal(stripLeadingH1(input), "Intro text.\n\n## Section 1\nDetails.")
+  })
+
+  it("normalizes relative skill links in markdown body to /skills/<slug>/", () => {
+    const input = `Refer to [sync-antigravity-conversations](../sync-antigravity-conversations/SKILL.md) or [work-signal](./work-signal).`
+    assert.equal(
+      normalizeRelativeSkillLinks(input),
+      "Refer to [sync-antigravity-conversations](/skills/sync-antigravity-conversations/) or [work-signal](/skills/work-signal/).",
+    )
   })
 
   it("renders individual skill page with install block, prompts, and resolved related links", () => {

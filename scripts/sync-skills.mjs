@@ -28,6 +28,16 @@ export function stripLeadingH1(markdownBody) {
 }
 
 /**
+ * Rewrites relative skill links like `(../other-skill/SKILL.md)` to `(/skills/other-skill/)`.
+ */
+export function normalizeRelativeSkillLinks(markdownBody) {
+  return markdownBody.replace(
+    /\]\(\.\.?\/([a-z0-9-]+)(?:\/SKILL\.md|\/)?\)/gi,
+    "](/skills/$1/)",
+  )
+}
+
+/**
  * Sanitizes prose strings to adhere to yclian.com editorial rules (no em dashes).
  */
 export function sanitizeEditorialText(text) {
@@ -81,7 +91,7 @@ export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug) {
     examplePrompts,
     related,
     references,
-    body: stripLeadingH1(rawBody),
+    body: normalizeRelativeSkillLinks(stripLeadingH1(rawBody)),
   }
 }
 
@@ -99,7 +109,6 @@ export function renderSkillPage(skill, allSkillsMap) {
 
   const sections = [
     `---\n${frontmatterYaml}\n---`,
-    `${skill.description}`,
     `### install\n\n\`\`\`bash\nnpx skills add ${SKILLS_REPO_SSH_URI} --skill ${skill.slug}\n\`\`\``,
   ]
 
