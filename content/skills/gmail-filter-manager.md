@@ -12,7 +12,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill gmail-filter-manager
+npx skills add https://github.com/yclian/skills.git --skill gmail-filter-manager
 ```
 
 ### example prompts

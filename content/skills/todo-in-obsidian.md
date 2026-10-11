@@ -18,7 +18,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill todo-in-obsidian
+npx skills add https://github.com/yclian/skills.git --skill todo-in-obsidian
 ```
 
 ### example prompts

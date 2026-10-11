@@ -12,7 +12,7 @@ const DEFAULT_LOCAL_SKILLS_DIR = path.resolve(REPO_ROOT, "..", "skills")
 const CACHE_SKILLS_DIR = path.resolve(REPO_ROOT, ".quartz-cache", "skills-source")
 const OUTPUT_SKILLS_DIR = path.resolve(REPO_ROOT, "content", "skills")
 const SKILLS_REPO_GIT_URL = "https://github.com/yclian/skills.git"
-const SKILLS_REPO_SSH_URI = "git@github.com:yclian/skills.git"
+const SKILLS_REPO_SSH_URI = "https://github.com/yclian/skills.git"
 
 /**
  * Strips the leading `# Title` heading from a markdown body so Quartz's

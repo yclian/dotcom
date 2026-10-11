@@ -16,7 +16,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill laya-system-one
+npx skills add https://github.com/yclian/skills.git --skill laya-system-one
 ```
 
 ### example prompts

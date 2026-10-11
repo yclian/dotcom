@@ -14,7 +14,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill antigravity-extras
+npx skills add https://github.com/yclian/skills.git --skill antigravity-extras
 ```
 
 ### example prompts

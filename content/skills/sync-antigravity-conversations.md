@@ -12,7 +12,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill sync-antigravity-conversations
+npx skills add https://github.com/yclian/skills.git --skill sync-antigravity-conversations
 ```
 
 ### example prompts

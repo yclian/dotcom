@@ -18,7 +18,7 @@ tags:
 ### install
 
 ```bash
-npx skills add git@github.com:yclian/skills.git --skill work-signal
+npx skills add https://github.com/yclian/skills.git --skill work-signal
 ```
 
 ### example prompts
