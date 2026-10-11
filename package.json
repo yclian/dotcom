@@ -23,7 +23,8 @@
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
     "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
-    "prebuild": "npm run install-plugins",
+    "sync-skills": "node ./scripts/sync-skills.mjs",
+    "prebuild": "npm run install-plugins && npm run sync-skills",
     "preview": "wrangler dev"
   },
   "engines": {
