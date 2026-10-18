@@ -89,6 +89,24 @@ Body paragraph here.
     assert.doesNotMatch(md, /allowed-tools/)
   })
 
+  it("includes created, modified, and date in frontmatter when provided", () => {
+    const skill = {
+      slug: "dated-skill",
+      name: "dated-skill",
+      description: "Dated skill summary.",
+      examplePrompts: [],
+      related: [],
+      references: [],
+      created: "2026-09-14",
+      modified: "2026-10-17",
+      body: "Body.",
+    }
+    const md = renderSkillPage(skill, new Map([[skill.slug, skill]]))
+    assert.match(md, /created: 2026-09-14/)
+    assert.match(md, /modified: 2026-10-17/)
+    assert.match(md, /date: 2026-10-17/)
+  })
+
   it("renders catalog index page with global install and skills table", () => {
     const skills = [
       {
@@ -98,12 +116,16 @@ Body paragraph here.
         examplePrompts: [],
         related: [],
         references: [],
+        created: "2026-09-10",
+        modified: "2026-10-17",
         body: "",
       },
     ]
     const indexMd = renderCatalogIndex(skills)
     assert.match(indexMd, /title: "?skills"?/)
     assert.match(indexMd, /publish: true/)
+    assert.match(indexMd, /modified: 2026-10-17/)
+    assert.match(indexMd, /date: 2026-10-17/)
     assert.match(indexMd, /npx skills add https:\/\/github\.com\/yclian\/skills\.git/)
     assert.match(indexMd, /\[alpha-skill\]\(\/skills\/alpha-skill\/\)/)
   })

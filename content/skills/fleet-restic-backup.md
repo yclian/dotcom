@@ -7,6 +7,9 @@ publish: true
 enableToc: true
 tags:
   - skills
+created: 2026-10-14
+modified: 2026-10-14
+date: 2026-10-14
 ---
 
 ### install

@@ -49,9 +49,33 @@ export function sanitizeEditorialText(text) {
 }
 
 /**
+ * Resolves git created and modified dates for a specific skill folder from the source repository.
+ */
+export function getFolderGitDates(sourceDir, folderSlug) {
+  try {
+    const modified = execFileSync(
+      "git",
+      ["-C", sourceDir, "log", "-1", "--format=%cs", "--", folderSlug],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+    ).trim()
+    const created = execFileSync(
+      "git",
+      ["-C", sourceDir, "log", "--diff-filter=A", "--format=%cs", "-1", "--", folderSlug],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+    ).trim()
+    return {
+      modified: modified || null,
+      created: created || modified || null,
+    }
+  } catch {
+    return { modified: null, created: null }
+  }
+}
+
+/**
  * Parses a raw `SKILL.md` file into a normalized skill record.
  */
-export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug) {
+export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug, dates = {}) {
   const match = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
   if (!match) {
     throw new Error(`Missing YAML frontmatter in ${filePath}`)
@@ -84,6 +108,9 @@ export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug) {
         }))
     : []
 
+  const created = frontmatter.created || frontmatter.date || dates.created || null
+  const modified = frontmatter.modified || dates.modified || created || null
+
   return {
     slug: folderSlug,
     name,
@@ -91,6 +118,8 @@ export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug) {
     examplePrompts,
     related,
     references,
+    created,
+    modified,
     body: normalizeRelativeSkillLinks(stripLeadingH1(rawBody)),
   }
 }
@@ -99,13 +128,23 @@ export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug) {
  * Renders the Quartz markdown content for an individual skill page (`content/skills/<slug>.md`).
  */
 export function renderSkillPage(skill, allSkillsMap) {
-  const frontmatterYaml = YAML.stringify({
+  const frontmatterObj = {
     title: skill.slug,
     description: skill.description,
     publish: true,
     enableToc: true,
     tags: ["skills"],
-  }).trim()
+  }
+
+  if (skill.created) {
+    frontmatterObj.created = skill.created
+  }
+  if (skill.modified) {
+    frontmatterObj.modified = skill.modified
+    frontmatterObj.date = skill.modified
+  }
+
+  const frontmatterYaml = YAML.stringify(frontmatterObj).trim()
 
   const sections = [
     `---\n${frontmatterYaml}\n---`,
@@ -150,12 +189,25 @@ export function renderSkillPage(skill, allSkillsMap) {
 export function renderCatalogIndex(skills) {
   const sorted = [...skills].sort((a, b) => a.slug.localeCompare(b.slug))
 
-  const frontmatterYaml = YAML.stringify({
+  const frontmatterObj = {
     title: "skills",
     description: "Reusable AI agent skills, operational runbooks, and local decision engines.",
     publish: true,
     enableToc: false,
-  }).trim()
+  }
+
+  const latestModified = skills
+    .map((s) => s.modified)
+    .filter(Boolean)
+    .sort()
+    .pop()
+
+  if (latestModified) {
+    frontmatterObj.modified = latestModified
+    frontmatterObj.date = latestModified
+  }
+
+  const frontmatterYaml = YAML.stringify(frontmatterObj).trim()
 
   const tableRows = sorted
     .map(
@@ -237,7 +289,8 @@ export async function syncSkills({ sourceDir, outputDir = OUTPUT_SKILLS_DIR } = 
     if (!existsSync(skillMdPath)) continue
 
     const raw = await fs.readFile(skillMdPath, "utf8")
-    const skill = parseSkillFile(raw, entry.name, skillMdPath)
+    const dates = getFolderGitDates(resolvedSource, entry.name)
+    const skill = parseSkillFile(raw, entry.name, skillMdPath, dates)
     skillsMap.set(skill.slug, skill)
   }
 

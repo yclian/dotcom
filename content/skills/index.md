@@ -3,6 +3,8 @@ title: skills
 description: Reusable AI agent skills, operational runbooks, and local decision engines.
 publish: true
 enableToc: false
+modified: 2026-10-17
+date: 2026-10-17
 ---
 
 A collection of reusable AI agent skills, operational runbooks, and local decision engines built for daily engineering, inbox triage, and personal workflow automation.
