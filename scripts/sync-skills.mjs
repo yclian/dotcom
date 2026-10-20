@@ -268,7 +268,7 @@ export async function resolveSkillsSourceDir() {
   )
   await fs.rm(CACHE_SKILLS_DIR, { recursive: true, force: true })
   await fs.mkdir(path.dirname(CACHE_SKILLS_DIR), { recursive: true })
-  execFileSync("git", ["clone", "--depth", "1", SKILLS_REPO_GIT_URL, CACHE_SKILLS_DIR], {
+  execFileSync("git", ["clone", SKILLS_REPO_GIT_URL, CACHE_SKILLS_DIR], {
     stdio: "inherit",
   })
   return CACHE_SKILLS_DIR
