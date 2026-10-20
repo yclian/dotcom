@@ -3,8 +3,8 @@ title: skills
 description: Reusable AI agent skills, operational runbooks, and local decision engines.
 publish: true
 enableToc: false
-modified: 2026-10-17
-date: 2026-10-17
+modified: 2026-10-18
+date: 2026-10-18
 ---
 
 A collection of reusable AI agent skills, operational runbooks, and local decision engines built for daily engineering, inbox triage, and personal workflow automation.
@@ -29,6 +29,7 @@ npx skills add https://github.com/yclian/skills.git --skill <skill-name>
 | :--- | :--- | :--- |
 | [antigravity-extras](/skills/antigravity-extras/) | Operational tribal knowledge, hidden internals, quirks, and runbooks for Google Antigravity / Antigravity 2.0 that the assistant does not natively know about itself. Covers persistent scheduled tasks (sidecars), browser automation (/browser) CDP boot-up and security quirks, application runtime lifecycle, profile architectures, and process quirks. | `npx skills add https://github.com/yclian/skills.git --skill antigravity-extras` |
 | [calendar-tbd-recommender](/skills/calendar-tbd-recommender/) | Automatically scans Google Calendar for upcoming events with placeholder locations (TBD, TBC, ???, or blank), analyzes meeting format and travel context (flights/transits), matches against a curated taste graph of venues, and generates contextual recommendations. Can patch confirmed venues directly back to the calendar. | `npx skills add https://github.com/yclian/skills.git --skill calendar-tbd-recommender` |
+| [engineering](/skills/engineering/) | Core software engineering, coding, testing, git workflow, resilience, and architecture standards grounded by YC Lian. Use when writing or refactoring code, designing tests (Dual-Boundary / Reality-and-Oracle Verification), making git commits or preparing PRs (Conventional Commits, Jira refs, squashing granular commits by category), structuring modules/packages, building resilient cloud/serverless integrations, or writing architecture docs (ARCH.md, DATAFLOW.md, ADRs) and implementation plans. | `npx skills add https://github.com/yclian/skills.git --skill engineering` |
 | [fleet-restic-backup](/skills/fleet-restic-backup/) | Architecture, pre-hook orchestration, and operational runbook for multi-node encrypted backups across mixed-OS fleets (Linux, Windows, macOS) into a unified, deduplicated restic repository. | `npx skills add https://github.com/yclian/skills.git --skill fleet-restic-backup` |
 | [gmail-filter-manager](/skills/gmail-filter-manager/) | Compose, validate, and safely deploy Gmail gateway routing filters (Terraform) without hitting silent delivery-time failures. Enforces flat boolean clauses, partition symmetry, and pre-apply canary checks. | `npx skills add https://github.com/yclian/skills.git --skill gmail-filter-manager` |
 | [laya-system-one](/skills/laya-system-one/) | Build high-speed, zero-token software with Laya: a local non-autoregressive "System 1" decision engine powered by ModernBERT-large (395M). Delivers typed judgments (Choice, Noul, Score) in ~35ms on standard CPU ($0.00 token cost). Use when designing or writing code for fast semantic routing, bulk event/email filtering, data classification pipelines, error triage, or when replacing an expensive LLM prompt-and-parse step with a local machine-native decision head. | `npx skills add https://github.com/yclian/skills.git --skill laya-system-one` |
