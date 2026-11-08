@@ -12,8 +12,8 @@ enableToc: true
 tags:
   - skills
 created: 2026-10-18
-modified: 2026-11-06
-date: 2026-11-06
+modified: 2026-11-08
+date: 2026-11-08
 ---
 
 ### install
