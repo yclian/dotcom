@@ -2,9 +2,11 @@ import { describe, it } from "node:test"
 import assert from "node:assert/strict"
 import {
   parseSkillFile,
+  parseReferenceFile,
   stripLeadingH1,
   normalizeRelativeSkillLinks,
   renderSkillPage,
+  renderReferencePage,
   renderCatalogIndex,
 } from "./sync-skills.mjs"
 
@@ -43,12 +45,51 @@ Body paragraph here.
     assert.equal(stripLeadingH1(input), "Intro text.\n\n## Section 1\nDetails.")
   })
 
-  it("normalizes relative skill links in markdown body to /skills/<slug>/", () => {
-    const input = `Refer to [sync-antigravity-conversations](../sync-antigravity-conversations/SKILL.md) or [work-signal](./work-signal).`
+  it("normalizes relative skill links, reference links, inline reference spans, and script links in markdown body", () => {
+    const input = [
+      "Refer to [sync-antigravity-conversations](../sync-antigravity-conversations/SKILL.md) or [work-signal](./work-signal).",
+      "Load [`references/systems-principles-and-governance.md`](./references/systems-principles-and-governance.md) and [setup](references/setup.md#step-1).",
+      "See `references/connector-path.md` for details.",
+      "See [`scripts/`](./scripts/) and [`fleet-backup.ps1`](./scripts/fleet-backup.ps1).",
+    ].join("\n")
+
     assert.equal(
-      normalizeRelativeSkillLinks(input),
-      "Refer to [sync-antigravity-conversations](/skills/sync-antigravity-conversations/) or [work-signal](/skills/work-signal/).",
+      normalizeRelativeSkillLinks(input, "engineering"),
+      [
+        "Refer to [sync-antigravity-conversations](/skills/sync-antigravity-conversations/) or [work-signal](/skills/work-signal/).",
+        "Load [`references/systems-principles-and-governance.md`](/skills/engineering/references/systems-principles-and-governance) and [setup](/skills/engineering/references/setup#step-1).",
+        "See [`references/connector-path.md`](/skills/engineering/references/connector-path) for details.",
+        "See [`scripts/`](https://github.com/yclian/skills/tree/master/engineering/scripts) and [`fleet-backup.ps1`](https://github.com/yclian/skills/blob/master/engineering/scripts/fleet-backup.ps1).",
+      ].join("\n"),
     )
+  })
+
+  it("parses and renders a skill reference markdown file with frontmatter and back-link", () => {
+    const rawRef = `# Systems Principles & Operational Governance
+
+> **Meta-Principle**: *Principles scale better and last longer than tools.*
+
+## 1. The Eight-Principle Canon
+Details here.
+`
+    const refRecord = parseReferenceFile(
+      rawRef,
+      "engineering",
+      "systems-principles-and-governance",
+      { created: "2026-10-18", modified: "2026-11-10" },
+    )
+    assert.equal(refRecord.skillSlug, "engineering")
+    assert.equal(refRecord.slug, "systems-principles-and-governance")
+    assert.equal(refRecord.title, "Systems Principles & Operational Governance")
+    assert.doesNotMatch(refRecord.body, /^# Systems Principles/)
+    assert.match(refRecord.body, /## 1\. The Eight-Principle Canon/)
+
+    const rendered = renderReferencePage(refRecord)
+    assert.match(rendered, /publish: true/)
+    assert.match(rendered, /title: Systems Principles & Operational Governance/)
+    assert.match(rendered, /created: 2026-10-18/)
+    assert.match(rendered, /modified: 2026-11-10/)
+    assert.match(rendered, /\[engineering\]\(\/skills\/engineering\/\)/)
   })
 
   it("renders individual skill page with install block, prompts, and resolved related links", () => {

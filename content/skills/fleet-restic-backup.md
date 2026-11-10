@@ -210,11 +210,11 @@ Implement a **Grandfather-Father-Son (GFS)** retention schedule that balances lo
 
 ## 5. Generic Reference Implementation
 
-See [`scripts/`](/skills/scripts/) for ready-to-deploy reference templates:
-* [`fleet-backup.ps1`](./scripts/fleet-backup.ps1): Complete Windows hub backup orchestrator.
-* [`backup_sqlite.py`](./scripts/backup_sqlite.py): Cross-platform atomic SQLite snapshot helper.
-* [`prepare-node.sh`](./scripts/prepare-node.sh): Linux node pre-backup export hook.
-* [`fleet-maintenance.ps1`](./scripts/fleet-maintenance.ps1): Retention pruning and repository verification script.
+See [`scripts/`](https://github.com/yclian/skills/tree/master/fleet-restic-backup/scripts) for ready-to-deploy reference templates:
+* [`fleet-backup.ps1`](https://github.com/yclian/skills/blob/master/fleet-restic-backup/scripts/fleet-backup.ps1): Complete Windows hub backup orchestrator.
+* [`backup_sqlite.py`](https://github.com/yclian/skills/blob/master/fleet-restic-backup/scripts/backup_sqlite.py): Cross-platform atomic SQLite snapshot helper.
+* [`prepare-node.sh`](https://github.com/yclian/skills/blob/master/fleet-restic-backup/scripts/prepare-node.sh): Linux node pre-backup export hook.
+* [`fleet-maintenance.ps1`](https://github.com/yclian/skills/blob/master/fleet-restic-backup/scripts/fleet-maintenance.ps1): Retention pruning and repository verification script.
 
 ---
 

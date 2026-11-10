@@ -13,6 +13,22 @@ const CACHE_SKILLS_DIR = path.resolve(REPO_ROOT, ".quartz-cache", "skills-source
 const OUTPUT_SKILLS_DIR = path.resolve(REPO_ROOT, "content", "skills")
 const SKILLS_REPO_GIT_URL = "https://github.com/yclian/skills.git"
 const SKILLS_REPO_SSH_URI = "https://github.com/yclian/skills.git"
+const SKILLS_REPO_WEB_URL = "https://github.com/yclian/skills"
+
+/**
+ * Extracts the leading `# Title` heading text from a markdown body, if present.
+ */
+export function extractLeadingH1(markdownBody) {
+  const trimmed = markdownBody.trimStart()
+  const lines = trimmed.split(/\r?\n/)
+  if (lines.length > 0) {
+    const match = lines[0].match(/^#\s+(.+)$/)
+    if (match) {
+      return sanitizeEditorialText(match[1])
+    }
+  }
+  return null
+}
 
 /**
  * Strips the leading `# Title` heading from a markdown body so Quartz's
@@ -28,13 +44,47 @@ export function stripLeadingH1(markdownBody) {
 }
 
 /**
- * Rewrites relative skill links like `(../other-skill/SKILL.md)` to `(/skills/other-skill/)`.
+ * Rewrites relative links inside skill markdown bodies:
+ * - Cross-skill links like `(../other-skill/SKILL.md)` or `(./other-skill)` -> `(/skills/other-skill/)`
+ * - Reference subpage links like `(./references/foo.md)`, `(references/foo.md#sec)`, or inline `` `references/foo.md` `` -> `(/skills/<slug>/references/foo#sec)`
+ * - Script/asset links like `(./scripts/foo.py)` or `(./scripts/)` -> GitHub `blob/master` or `tree/master` URLs
  */
-export function normalizeRelativeSkillLinks(markdownBody) {
-  return markdownBody.replace(
+export function normalizeRelativeSkillLinks(markdownBody, skillSlug = "") {
+  let result = markdownBody
+
+  if (skillSlug) {
+    // 1. Rewrite `./references/<name>.md` or `references/<name>.md` markdown links (with optional #anchor)
+    result = result.replace(
+      /\]\((?:\.\/)?references\/([a-z0-9-_]+)(?:\.md)?(#[^)]+)?\)/gi,
+      (_, refSlug, hash = "") => `](/skills/${skillSlug}/references/${refSlug}${hash})`,
+    )
+
+    // 2. Rewrite standalone inline code spans `` `references/<name>.md` `` (not already inside `[...]`) into clickable links
+    result = result.replace(
+      /(?<!\[)`(?:\.\/)?references\/([a-z0-9-_]+)\.md`(?!\])/gi,
+      (_, refSlug) => `[\`references/${refSlug}.md\`](/skills/${skillSlug}/references/${refSlug})`,
+    )
+
+    // 3. Rewrite `./scripts/` directory link to GitHub tree URL
+    result = result.replace(
+      /\]\((?:\.\/)?scripts\/\)/gi,
+      `](${SKILLS_REPO_WEB_URL}/tree/master/${skillSlug}/scripts)`,
+    )
+
+    // 4. Rewrite `./scripts/<file>` to GitHub blob URL
+    result = result.replace(
+      /\]\((?:\.\/)?scripts\/([^)]+)\)/gi,
+      (_, scriptPath) => `](${SKILLS_REPO_WEB_URL}/blob/master/${skillSlug}/scripts/${scriptPath})`,
+    )
+  }
+
+  // 5. Rewrite sibling skill links `(../other-skill/SKILL.md)` or `(./other-skill)`
+  result = result.replace(
     /\]\(\.\.?\/([a-z0-9-]+)(?:\/SKILL\.md|\/)?\)/gi,
     "](/skills/$1/)",
   )
+
+  return result
 }
 
 /**
@@ -49,18 +99,18 @@ export function sanitizeEditorialText(text) {
 }
 
 /**
- * Resolves git created and modified dates for a specific skill folder from the source repository.
+ * Resolves git created and modified dates for a specific path from the source repository.
  */
-export function getFolderGitDates(sourceDir, folderSlug) {
+export function getFolderGitDates(sourceDir, targetPath) {
   try {
     const modified = execFileSync(
       "git",
-      ["-C", sourceDir, "log", "-1", "--format=%cs", "--", folderSlug],
+      ["-C", sourceDir, "log", "-1", "--format=%cs", "--", targetPath],
       { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
     ).trim()
     const created = execFileSync(
       "git",
-      ["-C", sourceDir, "log", "--diff-filter=A", "--format=%cs", "-1", "--", folderSlug],
+      ["-C", sourceDir, "log", "--diff-filter=A", "--format=%cs", "-1", "--", targetPath],
       { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
     ).trim()
     return {
@@ -120,7 +170,38 @@ export function parseSkillFile(rawContent, folderSlug, filePath = folderSlug, da
     references,
     created,
     modified,
-    body: normalizeRelativeSkillLinks(stripLeadingH1(rawBody)),
+    body: normalizeRelativeSkillLinks(stripLeadingH1(rawBody), folderSlug),
+  }
+}
+
+/**
+ * Parses a raw `<skill>/references/<ref>.md` file into a normalized reference record.
+ */
+export function parseReferenceFile(rawContent, skillSlug, refSlug, dates = {}) {
+  const match = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
+  const frontmatter = match ? YAML.parse(match[1]) || {} : {}
+  const rawBody = match ? match[2] || "" : rawContent
+
+  const extractedTitle = extractLeadingH1(rawBody)
+  const title = frontmatter.title
+    ? sanitizeEditorialText(frontmatter.title)
+    : extractedTitle || refSlug
+
+  const description = frontmatter.description
+    ? sanitizeEditorialText(frontmatter.description)
+    : `Reference documentation for the ${skillSlug} skill: ${title}.`
+
+  const created = frontmatter.created || frontmatter.date || dates.created || null
+  const modified = frontmatter.modified || dates.modified || created || null
+
+  return {
+    skillSlug,
+    slug: refSlug,
+    title,
+    description,
+    created,
+    modified,
+    body: normalizeRelativeSkillLinks(stripLeadingH1(rawBody), skillSlug),
   }
 }
 
@@ -179,6 +260,38 @@ export function renderSkillPage(skill, allSkillsMap) {
   footerParts.push(`**external references & similar skills**\n\n${referenceItems.join("\n")}`)
 
   sections.push(footerParts.join("\n\n"))
+
+  return sections.join("\n\n") + "\n"
+}
+
+/**
+ * Renders the Quartz markdown content for a skill reference subpage (`content/skills/<slug>/references/<ref>.md`).
+ */
+export function renderReferencePage(refRecord) {
+  const frontmatterObj = {
+    title: refRecord.title,
+    description: refRecord.description,
+    publish: true,
+    enableToc: true,
+    tags: ["skills"],
+  }
+
+  if (refRecord.created) {
+    frontmatterObj.created = refRecord.created
+  }
+  if (refRecord.modified) {
+    frontmatterObj.modified = refRecord.modified
+    frontmatterObj.date = refRecord.modified
+  }
+
+  const frontmatterYaml = YAML.stringify(frontmatterObj).trim()
+
+  const sections = [
+    `---\n${frontmatterYaml}\n---`,
+    `> Part of the **[${refRecord.skillSlug}](/skills/${refRecord.skillSlug}/)** skill.`,
+    refRecord.body,
+    `---\n\n- Back to [${refRecord.skillSlug}](/skills/${refRecord.skillSlug}/)\n- [All skills in yclian/skills](/skills/)`,
+  ]
 
   return sections.join("\n\n") + "\n"
 }
@@ -275,23 +388,46 @@ export async function resolveSkillsSourceDir() {
 }
 
 /**
- * Main execution entry point: reads all skills and generates `content/skills/*.md`.
+ * Main execution entry point: reads all skills and generates `content/skills/<slug>/index.md`
+ * (or `content/skills/<slug>.md` when a skill has no subpages) plus `content/skills/<slug>/references/*.md`.
  */
 export async function syncSkills({ sourceDir, outputDir = OUTPUT_SKILLS_DIR } = {}) {
   const resolvedSource = sourceDir || (await resolveSkillsSourceDir())
   const entries = await fs.readdir(resolvedSource, { withFileTypes: true })
 
   const skillsMap = new Map()
+  const referencePages = []
+  const skillsWithReferences = new Set()
 
   for (const entry of entries) {
     if (!entry.isDirectory() || entry.name.startsWith(".")) continue
-    const skillMdPath = path.join(resolvedSource, entry.name, "SKILL.md")
+    const skillSlug = entry.name
+    const skillMdPath = path.join(resolvedSource, skillSlug, "SKILL.md")
     if (!existsSync(skillMdPath)) continue
 
     const raw = await fs.readFile(skillMdPath, "utf8")
-    const dates = getFolderGitDates(resolvedSource, entry.name)
-    const skill = parseSkillFile(raw, entry.name, skillMdPath, dates)
+    const dates = getFolderGitDates(resolvedSource, skillSlug)
+    const skill = parseSkillFile(raw, skillSlug, skillMdPath, dates)
     skillsMap.set(skill.slug, skill)
+
+    const refsDir = path.join(resolvedSource, skillSlug, "references")
+    if (existsSync(refsDir)) {
+      const refEntries = await fs.readdir(refsDir, { withFileTypes: true })
+      for (const refEntry of refEntries) {
+        if (!refEntry.isFile() || !refEntry.name.endsWith(".md")) continue
+        const refSlug = refEntry.name.replace(/\.md$/i, "")
+        const refFilePath = path.join(refsDir, refEntry.name)
+        const refRaw = await fs.readFile(refFilePath, "utf8")
+        const refRelativeGitPath = path.posix.join(skillSlug, "references", refEntry.name)
+        const refDates = getFolderGitDates(resolvedSource, refRelativeGitPath)
+        const refRecord = parseReferenceFile(refRaw, skillSlug, refSlug, {
+          created: refDates.created || dates.created,
+          modified: refDates.modified || dates.modified,
+        })
+        referencePages.push(refRecord)
+        skillsWithReferences.add(skillSlug)
+      }
+    }
   }
 
   if (skillsMap.size === 0) {
@@ -306,10 +442,29 @@ export async function syncSkills({ sourceDir, outputDir = OUTPUT_SKILLS_DIR } = 
 
   for (const skill of allSkills) {
     const pageContent = renderSkillPage(skill, skillsMap)
-    await fs.writeFile(path.join(outputDir, `${skill.slug}.md`), pageContent, "utf8")
+    const flatPath = path.join(outputDir, `${skill.slug}.md`)
+    const folderIndexPath = path.join(outputDir, skill.slug, "index.md")
+
+    if (skillsWithReferences.has(skill.slug)) {
+      await fs.rm(flatPath, { force: true })
+      await fs.mkdir(path.join(outputDir, skill.slug), { recursive: true })
+      await fs.writeFile(folderIndexPath, pageContent, "utf8")
+    } else {
+      await fs.rm(folderIndexPath, { force: true })
+      await fs.writeFile(flatPath, pageContent, "utf8")
+    }
   }
 
-  console.log(`Synced ${allSkills.length} skills into ${outputDir}`)
+  for (const refRecord of referencePages) {
+    const refOutDir = path.join(outputDir, refRecord.skillSlug, "references")
+    await fs.mkdir(refOutDir, { recursive: true })
+    const refContent = renderReferencePage(refRecord)
+    await fs.writeFile(path.join(refOutDir, `${refRecord.slug}.md`), refContent, "utf8")
+  }
+
+  console.log(
+    `Synced ${allSkills.length} skills and ${referencePages.length} reference pages into ${outputDir}`,
+  )
   return allSkills
 }
 

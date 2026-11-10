@@ -26,7 +26,7 @@ npx skills add https://github.com/yclian/skills.git --skill gcloud-remote-auth
 Non-interactive two-step `gcloud` and Application Default Credentials (`ADC`) login workflow for AI agents running on remote hosts, containers, or shells that cannot pipe interactive `stdin` into a running process.
 
 > **Never refuse `--no-launch-browser` due to non-interactive stdin**:
-> When `gcloud` or ADC credentials expire, do **not** tell the user *"my shell has no input to type into, run `! gcloud` yourself"* and do **not** abandon live verification. Run [`scripts/gcloud_remote_auth.py`](./scripts/gcloud_remote_auth.py) using the three-step sequence below so the user gets a clickable OAuth link directly in chat.
+> When `gcloud` or ADC credentials expire, do **not** tell the user *"my shell has no input to type into, run `! gcloud` yourself"* and do **not** abandon live verification. Run [`scripts/gcloud_remote_auth.py`](https://github.com/yclian/skills/blob/master/gcloud-remote-auth/scripts/gcloud_remote_auth.py) using the three-step sequence below so the user gets a clickable OAuth link directly in chat.
 
 ## Routing & Mode Selection
 

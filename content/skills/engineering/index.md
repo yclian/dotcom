@@ -103,7 +103,7 @@ Agents made black-box harnesses cheap and white-box mocked unit tests dangerous 
   - *Rank 6 (Invariants)* and *Rank 7 (Goldens / Phase 0 Characterisation)* are **guards**, never standalone certification.
 - **Reviewer Probes**: A reviewer writes adversarial probes from the spec without reading the implementation first; probes that find defects are promoted into permanent scenarios.
 
-👉 **Load [`references/dual-boundary-verification.md`](./references/dual-boundary-verification.md)** for the complete classification matrix, scenario-when-no-plan protocol, and the **4 copy-pasteable thin `test/support/` implementations** (`TestClock`, `planted.ts`, `recordingFetch` + `afterEach` invariant sweep, and `runStoreSuite` model checking).
+👉 **Load [`references/dual-boundary-verification.md`](/skills/engineering/references/dual-boundary-verification)** for the complete classification matrix, scenario-when-no-plan protocol, and the **4 copy-pasteable thin `test/support/` implementations** (`TestClock`, `planted.ts`, `recordingFetch` + `afterEach` invariant sweep, and `runStoreSuite` model checking).
 
 ---
 
@@ -125,7 +125,7 @@ Agents made black-box harnesses cheap and white-box mocked unit tests dangerous 
    - **Exports** (language concern): `camelCase` functions/vars, `PascalCase` classes/components, `UPPER_SNAKE_CASE` constants.
    - **Directory layout**: Group by domain responsibility (`src/oauth/`, `src/store/`), not technical layer (`controllers/`, `helpers/`).
 
-👉 **Load [`references/coding-and-packaging.md`](./references/coding-and-packaging.md)** for code examples and packaging graduation triggers.
+👉 **Load [`references/coding-and-packaging.md`](/skills/engineering/references/coding-and-packaging)** for code examples and packaging graduation triggers.
 
 ---
 
@@ -147,7 +147,7 @@ Agents made black-box harnesses cheap and white-box mocked unit tests dangerous 
    - Log `ERROR` with full context at the exact `catch` site; end-of-job summaries are recaps at `WARN`. Never log actual failures at `INFO`/`AUDIT` (silent failure trap).
    - Redact PII on a *shallow copy* passed to the logger—never mutate the live payload in flight.
 
-👉 **Load [`references/resilience-and-state.md`](./references/resilience-and-state.md)** for patterns and production post-mortem traps.
+👉 **Load [`references/resilience-and-state.md`](/skills/engineering/references/resilience-and-state)** for patterns and production post-mortem traps.
 
 ---
 
@@ -167,10 +167,10 @@ Agents made black-box harnesses cheap and white-box mocked unit tests dangerous 
    - **Plan & Break on Frontier (`Pro` / `Argon` / `Opus` / `Fable`)**: Use `master` to grill requirements, score Pugh matrices, and author committed specs (`docs/specs/`) and implementation plans (`docs/plans/`); use `breaker` for multi-hop red-team exploit tracing. Escalate to deep-reasoning (`--model gemini-4-argon-high --effort high` in `agy` or `--model fable --effort high` in `claude`) for novel architecture or hard concurrency puzzles.
    - **Execute & Gate on Fast Coding Tier (`Flash` / `Sonnet`)**: Once `master` commits an exact spec & plan, delegate worktree TDD implementation to `worker` (`Model="flash"` / `model: sonnet`) and pre-PR verification to `reviewer` (`Model="flash"` / `model: sonnet`)—3x faster execution at a fraction of frontier quota. Keep `broker` ("Deputy") off the critical path for exception/deadlock recovery and background queue triage only.
 
-👉 **Load [`references/architecture-and-review.md`](./references/architecture-and-review.md)** for templates, review checklists, and the multi-agent model tiering matrix, and **[`references/web-and-cloud-mechanics.md`](./references/web-and-cloud-mechanics.md)** for CSS grid/layer rules, Cloud Run + Terraform 4-step bootstrap, and Windows/MSYS path conversion guards.
+👉 **Load [`references/architecture-and-review.md`](/skills/engineering/references/architecture-and-review)** for templates, review checklists, and the multi-agent model tiering matrix, and **[`references/web-and-cloud-mechanics.md`](/skills/engineering/references/web-and-cloud-mechanics)** for CSS grid/layer rules, Cloud Run + Terraform 4-step bootstrap, and Windows/MSYS path conversion guards.
 
 
-👉 **Load [`references/systems-principles-and-governance.md`](./references/systems-principles-and-governance.md)** for the **Eight-Principle Systems Canon** (*Principles scale better and last longer than tools*), obfuscated field case studies, and how `master` (Pre-Flight Gauntlet, Pugh dissent, migration calculus) and `broker` (3-WIP stock cap, causal order over memory, two-way drift reconciliation, Sorites boundary escalation) operationalize systems governance.
+👉 **Load [`references/systems-principles-and-governance.md`](/skills/engineering/references/systems-principles-and-governance)** for the **Eight-Principle Systems Canon** (*Principles scale better and last longer than tools*), obfuscated field case studies, and how `master` (Pre-Flight Gauntlet, Pugh dissent, migration calculus) and `broker` (3-WIP stock cap, causal order over memory, two-way drift reconciliation, Sorites boundary escalation) operationalize systems governance.
 
 ---
 

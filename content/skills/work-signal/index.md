@@ -70,9 +70,9 @@ Evaluate once, before anything else.
 
 | Condition | Path |
 | :-- | :-- |
-| Gmail connector tools are available (`search_threads`) | **Connector** — see `references/connector-path.md` |
+| Gmail connector tools are available (`search_threads`) | **Connector** — see [`references/connector-path.md`](/skills/work-signal/references/connector-path) |
 | No connector, but a host shell with `node` ≥18 | **CLI** — `node src/work-signal.mjs --format json`, then apply Step 5 and Step 6 to its output |
-| Neither | Interactive: offer to connect Gmail, point at `references/setup.md`. Unattended: emit the failure line and stop |
+| Neither | Interactive: offer to connect Gmail, point at [`references/setup.md`](/skills/work-signal/references/setup). Unattended: emit the failure line and stop |
 
 On the connector path, sanity-check that `identity.email` appears in the `to` or `cc` of at least one result. If it never does, warn that the connector may be bound to a different mailbox — then continue.
 
@@ -88,7 +88,7 @@ On the connector path, sanity-check that `identity.email` appears in the `to` or
 
 ## Step 4 — Fetch
 
-Full detail in `references/connector-path.md`. The shape:
+Full detail in [`references/connector-path.md`](/skills/work-signal/references/connector-path). The shape:
 
 - **Window** — Monday reaches back to Saturday, every other day back one day. Day-granular `after:YYYY/MM/DD`, so a late-firing run loses nothing.
 - **Q1 signal** — one query, up to 3 pages of 50, minimal thread view. This returns sender, to/cc, date, labels, subject and snippet for every message. **No per-message calls.**
@@ -101,7 +101,7 @@ Budget: 3–8 calls. If you are making more, stop and re-read the reference.
 
 ## Step 5 — Classify
 
-Deterministic rules first, then judgement. Both are specified in `references/classification.md`, including the hard limits on what judgement may not do. In short:
+Deterministic rules first, then judgement. Both are specified in [`references/classification.md`](/skills/work-signal/references/classification), including the hard limits on what judgement may not do. In short:
 
 1. Drop and count noise — but never a thread carrying an internal human sender. Collapse mirror duplicates (the same alert relayed twice) into one.
 2. Mark **Handled** (latest sender is the user) and **Direct** (user in `to`, not merely `cc`).
@@ -172,10 +172,10 @@ A failure is never rendered as an empty inbox. If the mail source errored, say s
 
 | File | What it holds |
 | :-- | :-- |
-| `references/connector-path.md` | Exact queries, call budget, paging, edge cases |
-| `references/classification.md` | Bucket spec, rule order, judgement latitude, hard limits |
-| `references/setup.md` | Install: Gmail connector, or Node CLI with OAuth |
-| `references/scheduling.md` | Cron, the verbatim task prompt, publish checklist, risks |
+| [`references/connector-path.md`](/skills/work-signal/references/connector-path) | Exact queries, call budget, paging, edge cases |
+| [`references/classification.md`](/skills/work-signal/references/classification) | Bucket spec, rule order, judgement latitude, hard limits |
+| [`references/setup.md`](/skills/work-signal/references/setup) | Install: Gmail connector, or Node CLI with OAuth |
+| [`references/scheduling.md`](/skills/work-signal/references/scheduling) | Cron, the verbatim task prompt, publish checklist, risks |
 
 ---
 
