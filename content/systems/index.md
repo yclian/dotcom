@@ -134,21 +134,23 @@ Driving progression over perfection also means respecting what it actually takes
 
 #### 10. build habits and shape the environment
 
-> **Alternate intense focus with diffuse rest to break past old mental ruts, and test real competence through recall rather than familiarity. Build durable habits instead of burning scarce willpower before automating your life, and when leading others, fix the environment and clarity first without compromising your standards to be liked.**
+> **Rely on durable habits and clear environments rather than willpower. Know your habits before automating them, and shape conditions where the right action is natural.**
 
-Barbara Oakley showed that mastery requires two distinct gears in the brain: intense focused concentration to load the problem, followed by diffuse rest, a walk, or sleep so the mind can connect distant ideas beyond old mental ruts. Reading a solution and nodding along creates an illusion of competence; you only own an idea when you can close the book and retrieve it cold, or review the tape immediately after stepping off stage.
+You cannot "go big" every single day on pure adrenaline and hourly dopamine. As Barbara Oakley observed, willpower is an expensive, scarce resource; spend it only to rewire your reaction to a cue, then let quiet daily habits carry the flow. Even deep problem-solving depends on pacing your environment, alternating intense focus with genuine rest so the mind can step out of old ruts.
 
-You also cannot "go big" every single day on pure adrenaline and hourly dopamine. Willpower is expensive and scarce; spend it only to rewire your reaction to a cue, then let quiet daily habits carry the flow. Recently someone in a community chat asked me how to get real value out of autonomous AI agents. My answer was simple: step one is knowing your own habits. Automation without a tested personal habit just magnifies chaos, whereas turning an existing habit autonomous across your ledger, calendar, and work lets your life compound effortlessly.
+Recently someone in a community chat asked me how to get real value out of autonomous AI agents. My answer was simple: step one is knowing your own habits. Automation without a tested personal habit just magnifies chaos, whereas turning an existing habit autonomous across your ledger, calendar, and work lets your life compound effortlessly.
 
-The same lens applies when leading people. A person's performance is shaped first by the environment and clarity their manager creates. Fix the environment and give honest, fact-based feedback before blaming the individual. Warmth and likeability naturally keep doors open in life, so there is never a reason to be abrasive, yet being liked can never be the goal of leadership when hard standards have to be upheld.
+The same structural lens applies when leading people. A person's performance is shaped first by the environment and clarity their manager creates, so fix the environment and give honest, fact-based feedback before blaming the individual.
+
+And while warmth and likeability naturally keep doors open in life, so there is never a reason to be abrasive, being liked can never be the goal of leadership when hard standards have to be upheld.
 
 ---
 
 #### 11. understand causality and participate fully
 
-> **Understand causal mechanics to free yourself from hope, fear, and imagination. Be a participant with total integrity, not an outsider with expectations, starting over every dawn.**
+> **Understand causal mechanics to free yourself from hope, fear, and imagination. Be a participant with total integrity, not an outsider with expectations.**
 
-Baruch Spinoza observed that hope and fear cannot exist without each other: both arise when we are ignorant of how causes actually work and project our imagination onto uncertain outcomes. Albert Camus and Jean-Paul Sartre called for lucid participation in the world without bad faith, and Seneca reminded us that every morning is a fresh life.
+Baruch Spinoza observed that hope and fear cannot exist without each other: both arise when we are ignorant of how causes actually work and project our imagination onto uncertain outcomes. Albert Camus and Jean-Paul Sartre called for lucid participation in the world without bad faith, owning our choices inside reality rather than wishing it were different.
 
 Back in 2019, during a leadership retreat in Yilan, a simple realization stayed with me: if I want a team, a culture, or a system to be a certain way, I have to be a participant living it with integrity, not an outsider standing on the sideline expecting it from others.
 
