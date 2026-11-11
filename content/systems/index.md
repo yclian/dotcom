@@ -1,7 +1,7 @@
 ---
 title: "systems"
-description: "Eight principles on epistemology, system dynamics, and operational judgment."
-date: 2026-11-10
+description: "Principles on epistemology, system dynamics, and operational judgment."
+date: 2026-11-11
 publish: true
 enableToc: true
 tags:
@@ -16,13 +16,13 @@ tags:
 
 Frameworks, runtimes, and organizational charts rotate every few years. The failure modes of human judgment, coupled systems, and incentives do not.
 
-These eight principles distill fifteen years of notes across epistemology, system dynamics, and engineering management into a single operating canon.
+These principles distill fifteen years of notes across epistemology, probability, system dynamics, and engineering management into a living operating canon.
 
 ---
 
 ### i. epistemology & judgment
 
-#### 1. reason and evidence
+#### 1. test reason against evidence
 
 > **Hold *a priori* structure and *a posteriori* evidence in tension. Treat every plan as a hypothesis, and fight dogma with reasoning and observable reality.**
 
@@ -34,7 +34,7 @@ In engineering and management, pure empiricism without structure drowns in noisy
 
 ---
 
-#### 2. boundaries and judgment
+#### 2. harden the perimeter and trust judgment inside
 
 > **Set hard boundaries at the perimeter to give maximum flexibility inside, and rely on human judgment rather than rigid rules when boundaries are vague.**
 
@@ -46,9 +46,21 @@ Most organizations get this backwards: they police petty rules on the inside whi
 
 ---
 
+#### 3. respect extremes and shift the odds
+
+> **Do not assume the world follows a neat bell curve; extreme events happen far more often than average models predict (respect the heavy tails). Shift the odds early through preparation, never act without a reason, and back real conviction with dry powder rather than leverage.**
+
+As statistician David Hand and historian Peter Bernstein each showed, human beings love smooth bell curves because averages feel comforting, yet markets, outages, and human affairs have heavy tails. In a large enough system, "million-to-one" coincidences happen every afternoon, large datasets breed convincing illusions when we cherry-pick outcomes after the fact, and a single extreme day can wipe out years of quiet averages.
+
+Compare the odds of an ordinary city resident being struck by lightning against a park ranger patrolling exposed ridges in storm season. Small differences in your starting position and readiness protocols act as a massive probability lever on survival and outcome.
+
+That is why taking an action without a clear reason is already a mistake. In both engineering and capital allocation, you prepare early so tail events cannot knock you out of the game, you fund genuine conviction with real reserves rather than borrowed fragility, and when a generational wave arrives, you do not cap your own upside for a small illusion of comfort.
+
+---
+
 ### ii. systems, flow & cognitive dynamics
 
-#### 3. reflex and deliberation
+#### 4. automate reflexes and tripwire deliberation
 
 > **Automate fast reflexes (System 1) so you are not the bottleneck, and install structural tripwires to wake up deliberate thought (System 2).**
 
@@ -60,7 +72,7 @@ Operations and engineering teams need the exact same two-speed design. If every 
 
 ---
 
-#### 4. compounding, upkeep, and ownership
+#### 5. minimize upkeep and guard ownership
 
 > **Resist the inflow and stop doing what is not required. Minimize upkeep to maximize delivering true value, focus on work that compounds, and never trade away ownership for convenience.**
 
@@ -72,17 +84,17 @@ The same dynamics apply to ownership. Earlier in my career, I watched a team bri
 
 ---
 
-#### 5. friction and failure chains
+#### 6. expose friction and break failure chains
 
 > **Reduce risk and failure by exposing anomalies, friction, and their causal chain early, and never fail the same way twice.**
 
 Studying high-reliability organizations and the Toyota Production System, Steven Spear, Nelson Repenning, and Donald Kieffer showed that resilient systems do not hide friction behind heroic workarounds. They pull the *andon* cord on the first anomaly so the causal chain is still short, visible, and cheap to fix.
 
-A failure is rarely just the tragic moment at the end; it is almost always a quiet chain of events that started much earlier: a failure to notice an early anomaly, a failure to notify the right people in time, or a failure to rehearse what happens when the primary path breaks. Something as small as email forwarding can fail silently after an upstream change, dropping a handful of messages without throwing a single error. The only reason it does not turn into a crisis is having an independent daily check that reconciles what entered the front door against what actually landed in the inbox, catching the gap while the trail is still warm.
+A failure is rarely just the tragic moment at the end; it is almost always a quiet chain of events that started much earlier: a failure to notice an early anomaly, a failure to notify the right people in time, or a failure to rehearse what happens when the primary path breaks. Something as small as email forwarding can fail silently after an upstream change, dropping a handful of messages without throwing a single error. And as an airline captain mentor once reminded me, you can build all the guardrails you want, but an unobserved guardrail might as well not exist. Having an independent daily check that reconciles what entered the front door against what actually landed in the inbox catches the gap while the trail is still warm.
 
 ---
 
-#### 6. causal order over memory
+#### 7. judge by causal order over memory
 
 > **Judge only when there is a trustable, observable causal order, never from memory or psychological time.**
 
@@ -94,9 +106,21 @@ When we run an incident post-mortem or sit down on Friday afternoon for a retros
 
 ---
 
+#### 8. diagnose deeply and reason backward
+
+> **Do not confuse ambition or goals with strategy. Diagnose the root problem before prescribing solutions, look forward and reason backward from the end state, align incentives with outcomes rather than effort, and never mistake dependency for mutual benefit.**
+
+Richard Rumelt pointed out that most "strategies" are just dress-up lists of wishes: long on ambition, short on coherent action. Game theorists Avinash Dixit and Barry Nalebuff added the first rule of strategic interaction: look forward to the end state and reason backward to decide what must be true today.
+
+Walk into almost any struggling organization and you will see people jumping straight to solutions and tool purchases before anyone has acted like a doctor to diagnose the disease. You will also see leaders confuse two very different kinds of deadlines. Asking developers from the bottom up to invent padded calendar estimates or using story points as management KPIs only teaches smart people to game the numbers. Setting an audacious top-down constraint, on the other hand, forces a team to ask what unnecessary requirements can be deleted so only the core remains, while deferring irreversible technical commitments until the last responsible moment.
+
+Incentives and leverage finish the job. A cost-plus contract rewards contractors for dragging work out, whereas a fixed-price commitment forces continuous innovation to finish cleanly. And in partnerships or platform integrations, always look past polite slogans of "win-win": when an integration quietly turns into subordination, dependency is not mutual benefit.
+
+---
+
 ### iii. ethics, critique & praxis
 
-#### 7. dissent and progression
+#### 9. obligate dissent and drive progression
 
 > **Expose contradictions and obligate dissent to reach the best decision, then commit fully and drive progression over perfection.**
 
@@ -108,7 +132,19 @@ Driving progression over perfection also means respecting what it actually takes
 
 ---
 
-#### 8. causality, integrity, and participation
+#### 10. build habits and shape the environment
+
+> **Alternate intense focus with diffuse rest to break past old mental ruts, and test real competence through recall rather than familiarity. Build durable habits instead of burning scarce willpower before automating your life, and when leading others, fix the environment and clarity first without compromising your standards to be liked.**
+
+Barbara Oakley showed that mastery requires two distinct gears in the brain: intense focused concentration to load the problem, followed by diffuse rest, a walk, or sleep so the mind can connect distant ideas beyond old mental ruts. Reading a solution and nodding along creates an illusion of competence; you only own an idea when you can close the book and retrieve it cold, or review the tape immediately after stepping off stage.
+
+You also cannot "go big" every single day on pure adrenaline and hourly dopamine. Willpower is expensive and scarce; spend it only to rewire your reaction to a cue, then let quiet daily habits carry the flow. Recently someone in a community chat asked me how to get real value out of autonomous AI agents. My answer was simple: step one is knowing your own habits. Automation without a tested personal habit just magnifies chaos, whereas turning an existing habit autonomous across your ledger, calendar, and work lets your life compound effortlessly.
+
+The same lens applies when leading people. A person's performance is shaped first by the environment and clarity their manager creates. Fix the environment and give honest, fact-based feedback before blaming the individual. Warmth and likeability naturally keep doors open in life, so there is never a reason to be abrasive, yet being liked can never be the goal of leadership when hard standards have to be upheld.
+
+---
+
+#### 11. understand causality and participate fully
 
 > **Understand causal mechanics to free yourself from hope, fear, and imagination. Be a participant with total integrity, not an outsider with expectations, starting over every dawn.**
 
