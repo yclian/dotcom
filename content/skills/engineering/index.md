@@ -12,8 +12,8 @@ enableToc: true
 tags:
   - skills
 created: 2026-11-10
-modified: 2026-11-10
-date: 2026-11-10
+modified: 2026-11-11
+date: 2026-11-11
 ---
 
 ### install
@@ -170,7 +170,7 @@ Agents made black-box harnesses cheap and white-box mocked unit tests dangerous 
 👉 **Load [`references/architecture-and-review.md`](/skills/engineering/references/architecture-and-review)** for templates, review checklists, and the multi-agent model tiering matrix, and **[`references/web-and-cloud-mechanics.md`](/skills/engineering/references/web-and-cloud-mechanics)** for CSS grid/layer rules, Cloud Run + Terraform 4-step bootstrap, and Windows/MSYS path conversion guards.
 
 
-👉 **Load [`references/systems-principles-and-governance.md`](/skills/engineering/references/systems-principles-and-governance)** for the **Eight-Principle Systems Canon** (*Principles scale better and last longer than tools*), obfuscated field case studies, and how `master` (Pre-Flight Gauntlet, Pugh dissent, migration calculus) and `broker` (3-WIP stock cap, causal order over memory, two-way drift reconciliation, Sorites boundary escalation) operationalize systems governance.
+👉 **Load [`references/systems-principles-and-governance.md`](/skills/engineering/references/systems-principles-and-governance)** for the **Systems Principles Canon** (*Principles scale better and last longer than tools*), executable `Engineering Gate`s (anti-HARKing/LASSO sparsity, single-team domain ownership, heavy-tail headroom, `Intent -> Review` AI-native inversion, 5-step deletion before automation, unobserved guardrail fallacy, anti-Goodhart metric rules), and the `master` vs. `broker` operationalization matrix.
 
 ---
 
